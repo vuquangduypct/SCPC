@@ -35,3 +35,34 @@ The second line contains n
 
 Output
 For each test case, output an integer — the maximum possible combat power.'''
+
+def kavya_battle(t, test_cases):
+    results = []
+    for case in test_cases:
+        n, c, k, a = case
+        a.sort()
+        for i in range(n):
+            if a[i] <= c:
+                c += a[i]
+            elif k > 0:
+                k -= 1
+                a[i] += 1
+                if a[i] <= c:
+                    c += a[i]
+            else:
+                break
+        results.append(c)
+    return results
+
+if __name__ == "__main__":
+    t = int(input())
+    test_cases = []
+    for _ in range(t):
+        n, c, k = map(int, input().split())
+        a = list(map(int, input().split()))
+        test_cases.append((n, c, k, a))
+    
+    results = kavya_battle(t, test_cases)
+    for result in results:
+        print(result)
+
