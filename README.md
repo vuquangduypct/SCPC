@@ -1,0 +1,2 @@
+This project is the list of weekly SCPC tasks that would help to embrace the skillset and mind of programming and help the player to be enthusiastic on the programming world.
+Credits: SCPC and SYNCS team 
